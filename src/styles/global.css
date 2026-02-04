@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap');
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(120deg, #ffeef3, #fff7fa);
+  overflow-x: hidden;
+}
+
+h1, h2 {
+  font-family: "Playfair Display", serif;
+}
+
+.floating-bg::before {
+  content: "💖 💗 💞 💕 💘";
+  position: fixed;
+  inset: 0;
+  font-size: 3rem;
+  opacity: 0.07;
+  animation: floatBg 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes floatBg {
+  from { transform: translateY(0); }
+  to { transform: translateY(-200px); }
+}
+button {
+  font-family: inherit;
+  outline: none;
+  border: none;
+}

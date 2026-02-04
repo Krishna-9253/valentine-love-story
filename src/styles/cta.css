@@ -1,0 +1,87 @@
+/* ===== CTA WRAPPER ===== */
+.test-cta {
+  max-width: 640px;
+  margin: 5rem auto;
+  padding: 3rem 2.5rem;
+  text-align: center;
+
+  border-radius: 36px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 227, 236, 0.95),
+    rgba(255, 245, 249, 0.95)
+  );
+
+  backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 25px 55px rgba(255, 111, 145, 0.25),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+
+  animation: ctaFloat 4s ease-in-out infinite;
+}
+
+/* ===== CTA TEXT ===== */
+.test-cta h2 {
+  font-size: 2rem;
+  margin-bottom: 0.6rem;
+}
+
+.test-cta p {
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-bottom: 2.2rem;
+}
+
+/* ===== CTA BUTTON ===== */
+.test-cta button {
+  padding: 0.9rem 2.2rem;
+  border-radius: 999px;
+  border: none;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  background: linear-gradient(135deg, #ff6f91, #ff8fab);
+  color: white;
+
+  cursor: pointer;
+
+  box-shadow: 0 12px 30px rgba(255, 111, 145, 0.45);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.test-cta button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 18px 45px rgba(255, 111, 145, 0.55);
+}
+
+.test-cta button:active {
+  transform: scale(0.96);
+}
+
+/* ===== FLOAT ANIMATION ===== */
+@keyframes ctaFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+  .test-cta {
+    margin: 3.5rem 1rem;
+    padding: 2.5rem 1.6rem;
+  }
+
+  .test-cta h2 {
+    font-size: 1.7rem;
+  }
+}

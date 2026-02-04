@@ -1,0 +1,158 @@
+/* ===== STORY CAROUSEL WRAPPER ===== */
+.story-carousel {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1rem 5rem;
+}
+
+/* ===== STORY CARD ===== */
+.story-card {
+  max-width: 680px;
+  width: 100%;
+  text-align: center;
+
+  padding: 2.5rem 2rem;
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(14px);
+
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.18);
+
+  animation: fadeUp 0.6s ease both;
+}
+
+.story-card img {
+  width: 280px;
+  border-radius: 22px;
+  margin-bottom: 1.8rem;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.18);
+}
+
+.story-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.6rem;
+}
+
+.story-card p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* ===== CONTROLS ===== */
+.story-controls {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.story-controls button {
+  padding: 0.75rem 1.8rem;
+  border-radius: 999px;
+  border: none;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  background: linear-gradient(135deg, #ff6f91, #ff8fab);
+  color: white;
+
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.story-controls button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 14px 35px rgba(255, 111, 145, 0.45);
+}
+
+/* Secondary back button */
+.story-controls .secondary {
+  background: #ffe3ec;
+  color: #333;
+}
+
+/* ===== PROGRESS ===== */
+.story-progress {
+  margin-top: 1.4rem;
+  font-size: 0.85rem;
+  opacity: 0.6;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+  .story-card {
+    padding: 2rem 1.4rem;
+    position: relative;
+  }
+
+  .story-card img {
+    width: 220px;
+  }
+}
+
+/* Hint text */
+.swipe-hint {
+  margin-top: 0.8rem;
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+
+/* Prevent image dragging */
+.story-card img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Smooth transition when index changes */
+.story-card {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* 💖 HEART BURST */
+.heart-burst {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heart-burst span {
+  position: absolute;
+  font-size: 1.6rem;
+  animation: floatHeart 0.8s ease forwards;
+  opacity: 0;
+}
+
+.heart-burst span:nth-child(1) { animation-delay: 0s; }
+.heart-burst span:nth-child(2) { animation-delay: 0.1s; }
+.heart-burst span:nth-child(3) { animation-delay: 0.2s; }
+.heart-burst span:nth-child(4) { animation-delay: 0.3s; }
+.heart-burst span:nth-child(5) { animation-delay: 0.4s; }
+
+@keyframes floatHeart {
+  from {
+    transform: translateY(20px) scale(0.6);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-80px) scale(1.3);
+    opacity: 1;
+  }
+}

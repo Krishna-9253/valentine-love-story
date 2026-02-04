@@ -1,0 +1,57 @@
+.certificate {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #fff0f6, #ffe3ec);
+  padding: 2rem;
+}
+
+.certificate-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.cert-text {
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.cert-names {
+  font-size: 1.4rem;
+  margin: 1.2rem 0;
+  color: #ff4f81;
+}
+
+.cert-date {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.cert-footer {
+  margin-top: 1.8rem;
+  font-style: italic;
+}
+
+.download-btn {
+  margin-top: 2rem;
+  padding: 0.7rem 1.6rem;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #ff6f91, #ff8fab);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media print {
+  .download-btn {
+    display: none;
+  }
+}
