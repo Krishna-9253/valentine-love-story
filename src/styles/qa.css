@@ -200,6 +200,7 @@
 }
 
 .celebration-content {
+  position: relative;
   text-align: center;
   z-index: 2;
   animation: popIn 0.8s ease both;

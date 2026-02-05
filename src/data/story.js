@@ -40,6 +40,11 @@ const story = [
     image: "/images/6.png"
   },
   {
+    title: "Our Pennukanal 🤍",
+    text: "Where it all felt right.",
+    image: "/images/pennukanal.png"
+  },
+  {
     title: "Forever Was Decided – April 11",
     text: "We got engaged. A promise for a lifetime.",
     image: "/images/7.png"

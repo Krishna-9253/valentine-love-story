@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import qa from "../data/qa";
 import LoveModal from "./LoveModal";
 import "../styles/qa.css";
+import "../styles/certificate.css";
 
 function QA() {
   // screen: "qa" | "proposal" | "celebration"
@@ -148,48 +149,70 @@ function QA() {
       )}
 
       {/* ===============================
-          CELEBRATION / CERTIFICATE
-      =============================== */}
-      {screen === "celebration" && (
-        <div className="celebration-overlay">
-          <div className="celebration-content">
-            <h1>💍💖</h1>
-            <p>Forever starts now.</p>
+        CELEBRATION / CERTIFICATE
+=============================== */}
+{screen === "celebration" && (
+  <div className="celebration-overlay">
+    <div className="celebration-content">
+  <h1 className="celebration-icon">💍💖</h1>
 
-            <p className="yes-time">
-              No undo. No escape.<br />
-              <strong>You’re locked with me for every lifetime 😌💖</strong>
-            </p>
+  <h2 className="celebration-title">
+    Certificate of Forever
+  </h2>
 
-            {yesTime && (
-              <p className="yes-time-sub">
-                Since<br />
-                <strong>{formatYesTime(yesTime)}</strong>
-              </p>
-            )}
+  <p className="celebration-text">
+    This officially certifies that
+    <br />
+    <strong>You’re locked with me for every lifetime 😌💖</strong>
+  </p>
 
-            {/* SIMPLE MOBILE SAFE INSTRUCTION */}
-            <div className="certificate-hint">
-              👉 Screenshot this page — proof of being officially taken forever 😏💍
-            </div>
+  {/* SIGNATURES + STAMP */}
+<div className="signature-section">
+  <div className="signature">
+    <span className="signature-name">Adarsh</span>
+    <span className="signature-label">His Soul</span>
+  </div>
 
-            <div className="celebration-actions">
-              <button className="restart-btn" onClick={resetQA}>
-                🔁 Take Love Test again
-              </button>
-            </div>
-          </div>
+  {/* STAMP IN THE MIDDLE */}
+  <div className="destiny-stamp">
+    Approved by Destiny
+  </div>
 
-          {[...Array(25)].map((_, i) => (
-            <span key={i} className="heart">💖</span>
-          ))}
+  <div className="signature">
+    <span className="signature-name">Krishnapriya</span>
+    <span className="signature-label">Her Heart</span>
+  </div>
+</div>
+  {yesTime && (
+    <p className="yes-time-sub">
+      Since
+      <br />
+      <strong>{formatYesTime(yesTime)}</strong>
+    </p>
+  )}
 
-          <audio autoPlay>
-            <source src="/sounds/celebrate.mp3" type="audio/mpeg" />
-          </audio>
-        </div>
-      )}
+  <div className="certificate-hint">
+    📸 Screenshot this page — proof of being officially taken forever 😏💍
+  </div>
 
+  <div className="celebration-actions">
+    <button className="restart-btn" onClick={resetQA}>
+      🔁 Take Love Test Again
+    </button>
+  </div>
+</div>
+
+    {/* floating hearts */}
+    {[...Array(25)].map((_, i) => (
+      <span key={i} className="heart">💖</span>
+    ))}
+
+    {/* celebration sound */}
+    <audio autoPlay>
+      <source src="/sounds/celebrate.mp3" type="audio/mpeg" />
+    </audio>
+  </div>
+)}
       {/* ===============================
           MODAL
       =============================== */}
