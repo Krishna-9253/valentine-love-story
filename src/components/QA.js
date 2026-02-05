@@ -169,7 +169,7 @@ function QA() {
   {/* SIGNATURES + STAMP */}
 <div className="signature-section">
   <div className="signature">
-    <span className="signature-name">Adarsh</span>
+    <span className="signature-name">Krishnapriya</span>
     <span className="signature-label">His Soul</span>
   </div>
 
@@ -179,7 +179,7 @@ function QA() {
   </div>
 
   <div className="signature">
-    <span className="signature-name">Krishnapriya</span>
+    <span className="signature-name">Adarsh</span>
     <span className="signature-label">Her Heart</span>
   </div>
 </div>
