@@ -1,5 +1,10 @@
 const story = [
   {
+    title: "“We didn’t plan us. Destiny did.”",
+    text: "“Our love arrived quietly, unexpectedly—yet it felt written long before we met.”",
+    image: "/images/us.png"
+  },
+  {
     title: "The Unexpected Beginning",
     text: "Bangalore. A pub. A chance meeting. I met his brother first—and he believed in us before we did.",
     image: "/images/1.png"
@@ -30,7 +35,7 @@ const story = [
     image: "/images/5.png"
   },
   {
-    title: "First Meeting – March 2024",
+    title: "First Meeting – March 2025",
     text: "After 7 months of waiting, we finally met in Kerala.",
     image: "/images/6.png"
   },
@@ -40,7 +45,7 @@ const story = [
     image: "/images/7.png"
   },
   {
-    title: "Continuing our journey happily, waiting for our big day",
+    title: "Counting days, holding hands, waiting for our forever.",
     text: "Love you today. Love you tomorrow. Love you forever.",
     image: "/images/8.png"
   }

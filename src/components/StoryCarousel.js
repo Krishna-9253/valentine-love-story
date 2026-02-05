@@ -106,9 +106,9 @@ function StoryCarousel() {
           )}
         </div>
 
-        <p className="story-progress">
+        {/* <p className="story-progress">
           {index + 1} / {story.length}
-        </p>
+        </p> */}
 
         <p className="swipe-hint">← Swipe →</p>
       </div>
