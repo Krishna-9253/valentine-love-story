@@ -6,6 +6,8 @@ import "../styles/certificate.css";
 
 function QA() {
   // screen: "qa" | "proposal" | "celebration"
+  const pressTimer = useRef(null);
+  const [showResetMsg, setShowResetMsg] = useState(false);
   const [screen, setScreen] = useState("qa");
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -21,17 +23,35 @@ function QA() {
      INIT
   =============================== */
   useEffect(() => {
-    qaAudio.current = new Audio("/sounds/qa.mp3");
-    qaAudio.current.volume = 0.3;
+  qaAudio.current = new Audio("/sounds/qa.mp3");
+  qaAudio.current.volume = 0.3;
 
-    const alreadySaidYes = localStorage.getItem("saidYes");
-    const storedTime = localStorage.getItem("yesTime");
+  const hasTakenTest = localStorage.getItem("hasTakenTest");
+  const alreadySaidYes = localStorage.getItem("saidYes");
+  const storedTime = localStorage.getItem("yesTime");
 
-    if (alreadySaidYes === "true") {
-      setYesTime(storedTime);
-      setScreen("celebration");
-    }
-  }, []);
+  // ONLY show certificate if THIS device has completed the test
+  if (hasTakenTest === "true" && alreadySaidYes === "true") {
+    setYesTime(storedTime);
+    setScreen("celebration");
+  } else {
+    setScreen("qa"); // force QA for first-time visitors
+  }
+}, []);
+
+const hardReset = () => {
+  localStorage.clear();
+
+  setCurrentIndex(0);
+  setScore(0);
+  setModal(null);
+  setYesTime(null);
+  qaPlayed.current = false;
+  setScreen("qa");
+
+  setShowResetMsg(true);
+  setTimeout(() => setShowResetMsg(false), 2000);
+};
 
   const playOnce = () => {
     if (!qaAudio.current || qaPlayed.current) return;
@@ -77,6 +97,11 @@ function QA() {
 
   return (
     <section className="qa">
+      {showResetMsg && (
+  <div className="reset-toast">
+    ✨ Destiny reset ✨
+  </div>
+)}
 
       {/* ===============================
           QUESTIONS
@@ -124,6 +149,7 @@ function QA() {
               onClick={() => {
                 const now = new Date();
 
+                localStorage.setItem("hasTakenTest", "true"); // 👈 important
                 localStorage.setItem("saidYes", "true");
                 localStorage.setItem("yesTime", now.toISOString());
 
@@ -156,9 +182,20 @@ function QA() {
     <div className="celebration-content">
   <h1 className="celebration-icon">💍💖</h1>
 
-  <h2 className="celebration-title">
-    Certificate of Forever
-  </h2>
+  <h2
+  className="celebration-title"
+  onMouseDown={() => {
+    pressTimer.current = setTimeout(hardReset, 3000);
+  }}
+  onMouseUp={() => clearTimeout(pressTimer.current)}
+  onMouseLeave={() => clearTimeout(pressTimer.current)}
+  onTouchStart={() => {
+    pressTimer.current = setTimeout(hardReset, 3000);
+  }}
+  onTouchEnd={() => clearTimeout(pressTimer.current)}
+>
+  Certificate of Forever
+</h2>
 
   <p className="celebration-text">
     This officially certifies that
