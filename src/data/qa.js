@@ -1,10 +1,10 @@
 const qa = [
   {
     q: "Where did our story begin?",
-    options: ["Instagram", "Bangalore pub 🍻", "College", "Kerala 🌴"],
+    options: ["Instagram", "Bangalore 🛺🚇🪷🛕", "College", "Kerala 🌴"],
     correctIndex: 1,
-    loveMessage: "Correct 😍 Fate + beer = us!",
-    angryMessage: "Wrong 😤 Think pub. Think destiny."
+    loveMessage: "Correct 😍 Fate + Bglr = us!",
+    angryMessage: "Wrong 😤 Think destiny."
   },
   {
     q: "Who said 'Hai' first? 💬",
