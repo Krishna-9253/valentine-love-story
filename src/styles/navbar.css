@@ -36,3 +36,26 @@
   color: #fff;
   box-shadow: 0 6px 18px rgba(194, 24, 91, 0.35);
 }
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+}
+
+.nav-left {
+  display: flex;
+  gap: 16px;
+}
+
+.logout-emoji {
+  font-size: 22px;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.logout-emoji:hover {
+  transform: scale(1.15);
+  opacity: 0.8;
+}
